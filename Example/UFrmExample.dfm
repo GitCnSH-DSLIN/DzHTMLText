@@ -2,8 +2,8 @@ object Form1: TForm1
   Left = 0
   Top = 0
   Caption = 'DzHTMLText Example'
-  ClientHeight = 336
-  ClientWidth = 329
+  ClientHeight = 478
+  ClientWidth = 913
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
@@ -11,35 +11,17 @@ object Form1: TForm1
   Font.Name = 'Tahoma'
   Font.Style = []
   OldCreateOrder = False
+  OnCreate = FormCreate
   PixelsPerInch = 96
   TextHeight = 13
-  object Lb: TDzHTMLText
-    Left = 8
-    Top = 8
-    Width = 313
-    Height = 321
-    Font.Charset = ANSI_CHARSET
-    Font.Color = clWindowText
-    Font.Height = -13
-    Font.Name = 'Segoe UI'
-    Font.Style = []
-    ParentFont = False
-    Text = 
-      'Welcome to my app!<br><br><b>This is an important text</b> and <' +
-      'i>this is italic text</i>.<br><u>But we have underline too</u>, ' +
-      'and <s>strike-out</s> if you want.<br><br>You can change the <fn' +
-      ':Courier New>font name</fn> and the <fs:14>font size</fs><br>The' +
-      ' <fc:clBlue>colors</fc> are <bc:clYellow>allowed</bc> too! <img:' +
-      '0> <i>and images</i> <img:1><br><br><c>Alignment, we have!</c><b' +
-      'r><r>This is great</r><br><br>You can use tab align too:'#13#10'1<t:30' +
-      '>JHON<t:100>100.000'#13#10'2<t:30>SARAH<t:100>150.000'#13#10'3<t:30>ERIC<t:1' +
-      '00>180.000'#13#10#13#10'Click <a:www.google.com.br>here to open Google</a>' +
-      '.'#13#10'Click <a:MSG_BOX>here to show a message box</a>.'
-    AutoWidth = True
-    AutoHeight = True
-    Images = MyImages
-    OnLinkClick = LbLinkClick
-    LineVertAlign = vaCenter
+  object btn1: TButton
+    Left = 464
+    Top = 56
+    Width = 75
+    Height = 25
+    Caption = 'btn1'
+    TabOrder = 0
+    OnClick = btn1Click
   end
   object MyImages: TImageList
     Height = 24
@@ -47,7 +29,7 @@ object Form1: TForm1
     Left = 240
     Top = 240
     Bitmap = {
-      494C010102000800040018001800FFFFFFFFFF00FFFFFFFFFFFFFFFF424D3600
+      494C0101020008000C0018001800FFFFFFFFFF10FFFFFFFFFFFFFFFF424D3600
       0000000000003600000028000000600000001800000001002000000000000024
       000000000000000000000000000000000000D8C3B700AA6D4B00AA6D4B00AA6D
       4B00AA6D4B00AA6D4B00B6ABAC009DCEFB009DCEFB009DCEFB009DCEFB009DCE
@@ -348,6 +330,7 @@ object Form1: TForm1
       00000000FF81FF000000000000000000FFC1FF000001000000000000FFC1FF80
       0001000000000000FFC1FFC00003000000000000FFC1FFC00003000000000000
       FFE1FFE00007000000000000FFE1FFF0000F000000000000FFE3FFFC003F0000
-      00000000FFFFFFFF00FF000000000000}
+      00000000FFFFFFFF00FF00000000000000000000000000000000000000000000
+      000000000000}
   end
 end
