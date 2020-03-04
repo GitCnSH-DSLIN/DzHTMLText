@@ -2,8 +2,8 @@ object Form1: TForm1
   Left = 0
   Top = 0
   Caption = 'DzHTMLText Example'
-  ClientHeight = 478
-  ClientWidth = 913
+  ClientHeight = 671
+  ClientWidth = 1152
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
@@ -12,6 +12,9 @@ object Form1: TForm1
   Font.Style = []
   OldCreateOrder = False
   OnCreate = FormCreate
+  OnMouseMove = FormMouseMove
+  OnMouseUp = FormMouseUp
+  OnPaint = FormPaint
   PixelsPerInch = 96
   TextHeight = 13
   object btn1: TButton
@@ -21,6 +24,7 @@ object Form1: TForm1
     Height = 25
     Caption = 'btn1'
     TabOrder = 0
+    Visible = False
     OnClick = btn1Click
   end
   object MyImages: TImageList
@@ -29,7 +33,7 @@ object Form1: TForm1
     Left = 240
     Top = 240
     Bitmap = {
-      494C0101020008000C0018001800FFFFFFFFFF10FFFFFFFFFFFFFFFF424D3600
+      494C010102000800140018001800FFFFFFFFFF10FFFFFFFFFFFFFFFF424D3600
       0000000000003600000028000000600000001800000001002000000000000024
       000000000000000000000000000000000000D8C3B700AA6D4B00AA6D4B00AA6D
       4B00AA6D4B00AA6D4B00B6ABAC009DCEFB009DCEFB009DCEFB009DCEFB009DCE
