@@ -1,5 +1,6 @@
 # DzHTMLText
-## Delphi and Lazarus HTML Label component (DsLin: Modified to a background painting object, increased the flexibility of use.)
+## Delphi and Lazarus HTML Label component 
+##DsLin: Modified to a background painting object, increased the flexibility of use.
 
 ![Delphi Supported Versions](https://img.shields.io/badge/Delphi%20Supported%20Versions-XE2..10.3%20Rio-blue.svg)
 ![Platforms](https://img.shields.io/badge/Platforms-Win32%20and%20Win64-red.svg)
