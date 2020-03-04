@@ -353,15 +353,12 @@ var
   var
     W: TDHWord;
     B: {$IFDEF DCC}Vcl.{$ENDIF}Graphics.TBitmap;
-    NeedRepaint: Boolean;
     R: TRect;
   begin
     B := Self.FCachedBmp;
     for W in LWords do begin
       if W.Link then begin
-        NeedRepaint := False;
         if (W.ImageIndex < 0) and ((W.LinkID = NewInx) or (W.LinkID = OldInx)) then begin
-          NeedRepaint := True;
           B.Canvas.Brush.Color := BGColor;
           B.Canvas.FillRect(W.Rect);
 
@@ -445,8 +442,7 @@ begin
        {$IFDEF MSWINDOWS}
         ShellExecute(0, '', PChar(aTarget), '', '', 0);
        {$ELSE}
-        if aTarget.StartsWith('http://', True) or aTarget.StartsWith('https://',
-          True) or aTarget.StartsWith('www.', True) then
+        if aTarget.StartsWith('http://', True) or aTarget.StartsWith('https://', True) or aTarget.StartsWith('www.', True) then
           OpenURL(aTarget)
         else
           OpenDocument(aTarget);
@@ -457,8 +453,7 @@ begin
     if IsLinkHover then
       if Assigned(FOnLinkRightClick) then begin
         Handled := False;
-        FOnLinkRightClick(Self, FSelectedLinkID,
-          LLinkData[FSelectedLinkID], Handled);
+        FOnLinkRightClick(Self, FSelectedLinkID, LLinkData[FSelectedLinkID], Handled);
       end;
   end;
 end;
@@ -1128,7 +1123,7 @@ begin
 
             PreWidth := X + Ex.Width;
             if PreWidth > MaxWidth then begin
-              if (T.Kind <> ttImage) and (T.Text.Length > 0) and (C.TextExtent(T.Text[1]).Width <= MaxWidth) then begin
+              if (T.Kind <> ttImage) then begin
                 while T.Text.Length > 0 do begin
                   SubStr := T.Text;
                   for J := SubStr.Length downto 1 do begin
@@ -1147,12 +1142,16 @@ begin
                   if SubStr.Length = T.Text.Length then begin //Has no substring been cut
                     Ex := C.TextExtent(SubStr[1]);
                     if Ex.Width > MaxWidth then begin
+                      DoLineBreak;
                       AddStrPart(Copy(SubStr, 1, 1), Ex);
                       T.Text := Copy(SubStr, 2, MaxInt);
-                    end;
-                    DoLineBreak;
+                    end else
+                      DoLineBreak;
                   end;
                 end;
+              end else begin
+                DoLineBreak;
+                AddStrPart(T.Text, Ex);
               end;
             end else begin
               AddStrPart(T.Text, Ex);
