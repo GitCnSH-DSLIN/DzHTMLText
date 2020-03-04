@@ -20,6 +20,11 @@
 
 ## What's New
 
+- 03/04/2020
+   - Don't split words by space.
+   - Add an internal bitmap as the buffer of drawing to avoid repeated drawing. 
+   - <b>Modified to a background painting object, increased the flexibility of use.</b>
+
 - 02/15/2020
 
    - Add line vertical align property.
